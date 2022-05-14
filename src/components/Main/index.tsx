@@ -10,8 +10,8 @@ export const Main = () => {
     },
     {
       id: 2,
-      name: 'Rojão',
-      local: '/sounds/rojao.mp3',
+      name: 'Palmas',
+      local: '/sounds/palmas.mp3',
       category: 'meme'
     }
   ]
@@ -21,7 +21,7 @@ export const Main = () => {
         const [play] = useSound(sound.local)
         return (
           <button onClick={() => play()} key={i}>
-            Boop!
+            {sound.name}
           </button>
         )
       })}
