@@ -1,4 +1,5 @@
 import useSound from 'use-sound'
+import { Button } from '@nextui-org/react'
 
 export const Main = () => {
   const sounds = [
@@ -15,14 +16,16 @@ export const Main = () => {
       category: 'meme'
     }
   ]
+
   return (
     <>
       {sounds.map((sound, i) => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         const [play] = useSound(sound.local)
         return (
-          <button onClick={() => play()} key={i}>
+          <Button onClick={() => play()} key={i}>
             {sound.name}
-          </button>
+          </Button>
         )
       })}
     </>

@@ -6,6 +6,7 @@ import Document, {
   DocumentContext
 } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import { CssBaseline } from '@nextui-org/react'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -39,7 +40,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="pt-BR">
-        <Head />
+        <Head>{CssBaseline.flush()}</Head>
         <body>
           <Main />
           <NextScript />
